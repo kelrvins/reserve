@@ -1,0 +1,736 @@
+/* header */
+
+html {
+  font-family: '微软雅黑';
+  font-size: 20px;
+}
+@media only screen and (min-width: 400px) {
+  html {
+    font-size: 21.33333333px !important;
+  }
+}
+@media only screen and (min-width: 414px) {
+  html {
+    font-size: 22.08px !important;
+  }
+}
+@media only screen and (min-width: 480px) {
+  html {
+    font-size: 25.6px !important;
+  }
+}
+.clearfix:after {
+  /*最简方式*/
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.clearfix {
+  /*兼容 IE*/
+  zoom: 1;
+}
+
+
+/* 选择日期时间 填充个人信息 确认信息 */
+
+.date-chose-main,
+.fill-info-main,
+.confirm-info-main {
+  /* display: none; */
+  padding-top: 2.8rem;
+}
+
+.block-step-hide {
+  display: none ;
+}
+
+
+/* 弹出成功页 */
+
+.con-cover {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.54);
+}
+
+
+/* header  */
+
+.header-wrap {
+  display: flex;
+  justify-content: space-between;
+  background: #0132cc;
+  padding: 3px 0;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+}
+
+.logo {
+  height: 2.4rem;
+}
+
+.visibility-hidden {
+  visibility: hidden;
+}
+
+.back-step {
+  line-height: 2.4rem;
+  color: #fff;
+  font-size: 0.88rem;
+  padding-left: 0.5rem;
+}
+
+.header-menu {
+  line-height: 2.4rem;
+  padding: 0 0.8rem;
+  color: #fff;
+  font-size: 1.2rem;
+}
+
+
+/* header end*/
+
+
+/* chose-date-title */
+
+.chose-date-wrap {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 0.5rem;
+  font-size: 0.8rem;
+  line-height: 1.6rem;
+  background: #f3f3f3;
+  box-shadow: 0px 1px 1px #dfdfdf;
+}
+
+.chose-date-text {
+  color: #3E3E3E;
+}
+
+.serial-number {
+  font-size: 0.72rem;
+  background: #3B3A3A;
+  border-radius: 50%;
+  padding: 0 0.3rem;
+  margin-right: 0.4rem;
+  color: #fff;
+}
+
+.time-status {
+  color: #b4b3b3;
+}
+
+.green-status {
+  color: #7cdfa8 !important;
+}
+
+
+/* chose-date-title end*/
+
+
+/* chose-date-btn */
+
+.chose-date-ul {
+  display: flex;
+  list-style: none;
+  justify-content: space-around;
+  padding: 0 0.2rem;
+  flex-wrap: wrap;
+  min-height: 11.2rem;
+}
+
+.rotations {
+  margin-top: 4rem;
+  font-size: 2.4rem;
+  color: #6ec4e8;
+  height: 2.72rem;
+  -webkit-transform: rotate(360deg);
+  animation: rotation 1s linear infinite;
+  -moz-animation: rotation 1s linear infinite;
+  -webkit-animation: rotation 1s linear infinite;
+  -o-animation: rotation 1s linear infinite;
+}
+
+
+.rotationsbtn {
+  margin-top: 1.6rem;
+  font-size: 1.6rem;
+  color: #e4e4e4;
+  height: 1.92rem;
+  -webkit-transform: rotate(360deg);
+  animation: rotation 1s linear infinite;
+  -moz-animation: rotation 1s linear infinite;
+  -webkit-animation: rotation 1s linear infinite;
+  -o-animation: rotation 1s linear infinite;
+}
+
+@-webkit-keyframes rotation {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+.chose-date-li {
+  /* display: none; */
+  text-align: center;
+  width: 20%;
+  margin: 0.16rem 0;
+}
+
+.chose-date-i-sign {
+  display: none;
+  margin-top: 0.32rem;
+  font-size: 0.96rem;
+}
+
+.chose-this-date div {
+  border: 1px solid #0033cb !important;
+  background-color: #0033cb !important;
+  /* height: 95%; */
+}
+
+.chose-this-date .chose-date-i-sign {
+  display: block;
+  padding-bottom: 0.4rem;
+}
+
+.chose-this-date .this-week,
+.chose-this-date span {
+  display: none;
+}
+
+.reservation-full div {
+  border: 1px solid #e4e4e4 !important;
+  background-color: #e4e4e4 !important;
+}
+
+.reservation-full .this-week {
+  color: #e4e4e4 !important;
+}
+
+.reservation-full span {
+  color: #e4e4e4 !important;
+}
+
+.chose-date-li div {
+  margin: 0.4rem;
+  border-radius: 0.16rem;
+  border: 1px solid #6ec4e8;
+  background-color: #6ec4e8;
+  color: #fff;
+  padding-top: 0.24rem;
+}
+
+.chose-date-li div p {
+  margin: 0;
+}
+
+.chose-date-li span {
+  color: #7cdfa8;
+}
+
+.this-month {
+  font-size: 0.72rem;
+  padding: 0.08rem 0;
+}
+
+.this-date {
+  font-size: 1.2rem;
+  padding: 0.16rem 0;
+}
+
+.this-week {
+  font-size: 0.48rem;
+  padding: 0.16rem 0;
+  background-color: #fff;
+  color: #6ec4e8;
+  border-bottom-left-radius: 0.16rem;
+  border-bottom-right-radius: 0.16rem;
+}
+
+
+/* chose-date-btn end */
+
+.notice-text {
+  color: #C3BFBF;
+  text-align: center;
+  margin-bottom: 0.8rem;
+  font-size: 0.64rem;
+}
+
+.notice-text-b {
+  color: #4F4D4D;
+  text-align: center;
+  margin-bottom: 0.8rem;
+  font-size: 0.72rem;
+}
+
+.notice-text-b span {
+  color: #6ec4e8;
+}
+
+
+/* chose-time-btn */
+
+.chose-time-ul {
+  display: flex;
+  list-style: none;
+  justify-content: space-around;
+  min-height: 5.6rem;
+  padding: 0 0.72rem;
+  flex-wrap: wrap;
+}
+
+.chose-time-li {
+  display: none;
+  text-align: center;
+  width: 50%;
+  margin: 0.16rem 0;
+}
+
+.chose-time-i-sign{
+  display: none;
+}
+.reservation-time-full div {
+  border: 1px solid #e4e4e4 !important;
+  background-color: #e4e4e4 !important;
+}
+
+.reservation-time-full span,
+.reservation-time-full .this-time {
+  color: #e4e4e4 !important;
+}
+
+.chose-this-time div{
+  border: 1px solid #0033cb !important;
+  background-color: #0033cb !important;
+}
+.chose-time-li div {
+  margin: 0.4rem;
+  border-radius: 0.16rem;
+  border: 1px solid #6ec4e8;
+  background-color: #6ec4e8;
+  color: #fff;
+  padding-top: 0.24rem;
+}
+
+.chose-time-li div p {
+  margin: 0;
+}
+
+.chose-time-li span {
+  color: #7cdfa8;
+}
+
+.this-halfday {
+  font-size: 1.2rem;
+  padding: 0.24rem 0;
+}
+
+.this-time {
+  font-size: 0.64rem;
+  padding: 0.4rem 0;
+  background-color: #fff;
+  color: #6ec4e8;
+  border-bottom-left-radius: 0.16rem;
+  border-bottom-right-radius: 0.16rem;
+}
+
+
+/* chose-date-btn end */
+
+
+/* next-step */
+
+.next-step-wrap {
+  width: 100%;
+  border-top: 1px solid #ddd;
+  text-align: center;
+  font-size: 0.7rem;
+}
+
+.next-step {
+  padding: 0.72rem 1.76rem;
+  background: #e4e4e4;
+  border: none;
+  box-shadow: 2px 2px 1px 0px #e4e4e4;
+  color: #fff;
+  margin: 1.6rem auto;
+}
+
+.next-step-confirm {
+  background: #0033cb !important;
+}
+
+
+/* next-step end */
+
+
+/* fill info */
+
+
+/* personal top */
+
+.personal-info {
+  padding: 0.16rem 0.16rem;
+  box-shadow: 1px 1px 1px #dcdcdc;
+  display: flex;
+  justify-content: space-between;
+}
+
+.personal-info-title {
+  width: 30%;
+  float: left;
+  line-height: 2.4rem;
+  white-space: nowrap;
+  font-size: 0.8rem;
+}
+
+.personal-info-title i {
+  font-size: 1.04rem;
+  margin-right: 0.16rem;
+  margin-left: 0.4rem;
+}
+
+.info-notice {
+  width: 69%;
+  padding: 0.64rem 0 0.48rem;
+  font-size: 0.56rem;
+  line-height: 0.64rem;
+  float: right;
+  color: #4F4E4E;
+}
+
+
+/* personal top end */
+
+
+/* input area */
+
+.form-wrap {
+  margin: 0 0.4rem 0 0;
+}
+
+.inputs-wrap {
+  display: flex;
+  padding: 0.16rem 0 0.16rem 0.8rem;
+}
+
+.input-item:first-child {
+  margin-right: 5%;
+}
+
+.input-item {
+  /* float: left; */
+}
+
+.input-item p {
+  color: #4A4848;
+  font-size: 0.8rem;
+  margin: 0.56rem 0 0.48rem;
+}
+
+.input-item input[type=text],
+.input-item input[type=tel] {
+  width: calc(100% - 0.5rem);
+  border: 1px solid #6ec4e8;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+  line-height: 1.7rem;
+  border-radius: 0.08rem;
+  padding-left: 0.4rem;
+  -webkit-appearance: none;
+  /*清楚ios阴影 */
+  color: #0132cc;
+}
+
+.input-item input[type=text]:focus,
+.input-item input[type=tel]:focus {
+  border: 1px solid #6ec4e8;
+  outline: none;
+}
+
+.input-item p::before {
+  content: "* ";
+}
+
+
+/* 姓名 */
+
+.input-name {
+  width: 23%;
+}
+
+
+/* 证明 */
+
+.id-prove span {
+  font-size: 0.64rem;
+  line-height: 1.7rem;
+  color: #60C3EC;
+  display: flex;
+  justify-content: space-between;
+}
+
+.id-prove label {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.id-prove span input {
+  margin: 0 0.16rem;
+  line-height: 1.6rem;
+}
+
+.id-prove span input[type=checkbox] {
+  display: inline-block;
+  vertical-align: middle;
+  width: 0.96rem;
+  height: 0.96rem;
+  margin-left: 0.16rem;
+  -webkit-appearance: none;
+  background-color: transparent;
+  border: 0;
+  outline: 0 !important;
+  line-height: 0.8rem;
+  color: #d8d8d8;
+}
+
+.id-prove span input[type=checkbox]:after {
+  content: "";
+  display: block;
+  width: 0.96rem;
+  height: 0.96rem;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 0.8rem;
+  font-size: 0.56rem;
+  color: #fff;
+  border: 1px solid #ddd;
+  background-color: #fff;
+  box-sizing: border-box;
+}
+
+.id-prove span input[type=checkbox]:checked:after {
+  content: "L";
+  transform: matrix(-0.766044, -0.642788, -0.642788, 0.766044, 0, 0);
+  -webkit-transform: matrix(-0.766044, -0.642788, -0.642788, 0.766044, 0, 0);
+  border-color: #0132cc;
+  background-color: #0132cc;
+}
+
+
+/* 手机号码、邮箱 */
+
+.input-email {
+  width: 50%;
+}
+.input-phone-number {
+  width: 40%;
+}
+
+
+/* 身份证号码 */
+
+.input-id-num {
+  width: 49%;
+}
+
+
+/* 用途 */
+
+.input-use-for {
+  width: 41%;
+}
+
+
+/* 入职时间、离职时间 */
+
+.input-entry-date,
+.input-leave-date {
+  width: 35%;
+}
+
+
+/* 工作单位 */
+
+.input-employer {
+  width: 60%;
+}
+
+
+/* fill info end*/
+
+
+/* confirm info */
+
+.confirm-prove-wrap {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 2.4rem;
+}
+
+.confirm-prove-item {
+  display: inline-block;
+  width: 20%;
+  display: none;
+}
+
+.confirm-prove-item img {
+  width: 100%;
+}
+
+.confirm-prove-item p {
+  color: #0132cc;
+  font-weight: 600;
+  font-size: 0.72rem;
+  text-align: center;
+}
+
+.per-infos-ul {
+  padding-left: 1.2rem;
+  list-style: none;
+  min-height: 8rem;
+  font-size: 0.8rem;
+}
+
+.per-infos-ul li {
+  line-height: 1.52rem;
+}
+
+.per-infos-ul li span {
+  color: #0132cc;
+  font-weight: 600;
+}
+
+.per-infos-ul li span:first-child {
+  font-weight: 400;
+  color: #9D9D9D;
+}
+
+.confirm-notice-wrap {
+  padding: 0 1.2rem;
+}
+
+.confrim-notice-text {
+  color: #9D9D9D;
+  margin: 0.24rem 0;
+  font-size: 0.8rem;
+}
+
+.info-table-ul {
+  padding: 0;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  margin: 0;
+  list-style: none;
+  font-size: 0.8rem;
+}
+
+.info-table-ul li {
+  display: inline-block;
+  margin-right: 0.4rem;
+}
+
+.info-table-ul li p {
+  color: #949494;
+}
+
+.info-table-ul li p i {
+  color: #44be8b;
+}
+
+.confirm-use-time {
+  color: #44be8b;
+}
+
+.info-table-ul li p:first-child {
+  font-weight: 600;
+  color: #4F4D4D;
+}
+
+.submit-step-wrap {
+  width: 100%;
+  text-align: center;
+}
+
+.next-step {
+  padding: 0.72rem 1.76rem;
+  background-color: #e4e4e4;
+  border-radius: 0.16rem;
+  box-shadow: 2px 2px 1px 0px #e4e4e4;
+  color: #fff;
+  margin: 1.6rem auto;
+}
+
+.next-step:focus {
+  outline: none;
+}
+
+.next-step-go{
+  background-color: #0132cc;
+}
+
+/* confirm info end*/
+
+
+/* cover up block */
+
+.con-cover-success-block {
+  background: #fff;
+  text-align: center;
+  padding: 1.6rem 0.8rem;
+  width: 60%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 0.8rem;
+}
+
+.con-cover-success-block p {
+  padding: 0.08rem 0;
+  margin: 0;
+}
+
+.con-icon {
+  font-size: 1.6rem;
+}
+
+.back-home-btn{
+  background: #0132cc !important;
+}
+.submit-btn {
+  background: #0132cc !important;
+  padding: 0.72rem 1.76rem;
+  margin: 1.6rem auto 3.2rem;
+}
+
+.submit-icon{
+  position: absolute;
+  top: 30%;
+  left: 44%;
+  color: #fff;
+}
+
+.congrat-text {
+  font-size: 1.2rem;
+  padding: 0.8rem 0 !important;
+}
+
+.congrat-do-for {
+  color: #0132cc;
+  font-weight: 600;
+}
+
+.call-num {
+  text-decoration: none;
+}
