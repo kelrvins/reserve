@@ -13,7 +13,6 @@ const config = {
   entry: entry,
   output: {
     filename: './js/[name].js',
-    publicPath: '/',
     path: path.resolve(__dirname, 'docs') //生成地址
   },
   devServer: {
