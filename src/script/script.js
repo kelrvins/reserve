@@ -357,15 +357,15 @@ $(function () {
       dataType: 'json',
       data: applyOne,
       success: function (data) {
-        var congraTetx = "开具";
+        var congraTetx = "拍摄";
         for (var key in applyOne.document) {
           var element = applyOne.document[key];
           if (element == 1) {
-            congraTetx += "工作证明、"
+            congraTetx += "婚纱照、"
           } else if (element == 2) {
-            congraTetx += "离职证明、"
+            congraTetx += "证件照、"
           } else if (element == 3) {
-            congraTetx += "收入证明、"
+            congraTetx += "个人写真、"
           }
         }
         $("#congratDoFor").html(congraTetx.slice(0, congraTetx.length - 1))
