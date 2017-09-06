@@ -1,105 +1,108 @@
-const path = require('path'); //路径文件
+const htmlWebpackPlugin = require('html-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 const webpack = require('webpack');
-const ExtractTextPlugin = require('extract-text-webpack-plugin'); //输入css文件
-const HtmlWebpackPlugin = require('html-webpack-plugin'); //html
-const jquery = require('jquery');
+const path = require('path');
 
-//文件入口
-const entry = './src/entry.js';
-const template = './src/index.html';
-
-const config = {
-  devtool: 'eval',
-  entry: entry,
-  output: {
-    filename: './js/[name].js',
-    path: path.resolve(__dirname, 'docs') //生成地址
-  },
-  devServer: {
-    historyApiFallback: true,
-    compress: true, //使用gzip压缩
-    port: 9999, //端口号
-    host: '0.0.0.0',
-    disableHostCheck: true
-  },
-  module: {
-    rules: [{
-        test: require.resolve('jquery'),
-        use: [
-          'expose-loader?$',
-          'expose-loader?jQuery'
+module.exports = {
+    entry: {
+        entry: './src/entry.js'
+    },
+    output: {
+        path: path.resolve(__dirname, './docs'),
+        filename: '[name].bundle.js'
+    },
+    module: {
+        loaders: [{
+                test: /template\.html$/,
+                use: ['html-loader']
+            },
+            {
+                test: /\.(png|jpg|gif)$/,
+                loader: 'file-loader',
+                query: {
+                    name: 'static/img/[name]-[hash:8].[ext]'
+                }
+            },
+            {
+                test: /\.css$/,
+                use: ExtractTextPlugin.extract({
+                    fallback: 'style-loader',
+                    use: [{
+                        loader: 'css-loader',
+                        options: {
+                            importLoaders: 1
+                        } //这里可以简单理解为，如果css文件中有import 进来的文件也进行处理
+                    }, {
+                        loader: 'postcss-loader',
+                        options: { // 如果没有options这个选项将会报错 No PostCSS Config found
+                            plugins: function (loader) {
+                                [
+                                    // require('postcss-import')({root: loader.resourcePath}),
+                                    require('autoprefixer')() //CSS浏览器兼容
+                                    // require('cssnano')()  //压缩css
+                                ]
+                            }
+                        }
+                    }]
+                })
+            },
+            {
+                test: /\.scss$/,
+                use: ExtractTextPlugin.extract({
+                    fallback: "style-loader",
+                    use: ["css-loader?minimize", 'sass-loader']
+                })
+            },
+            {
+                test: /\.woff$/,
+                loader: "url?limit=10000&minetype=application/font-woff"
+            },
+            {
+                test: /\.svg/,
+                loader: "url?limit=10000&minetype=application/font-svg"
+            },
+            {
+                test: /\.eot/,
+                loader: "url?limit=10000&minetype=application/font-eot"
+            },
+            {
+                test: /\.woff2$/,
+                loader: "url?limit=10000&minetype=application/font-woff2"
+            },
+            {
+                test: /\.ttf/,
+                loader: "url?limit=10000&minetype=application/font-ttf"
+            }, {
+                test: /\.js$/,
+                exclude: /node_modules/,
+                use: ['babel-loader']
+            },
         ]
-      }, {
-        test: /\.html$/,
-        use: 'html-loader'
-      },
-      {
-        test: /\.js$/,
-        exclude: /(node_modules|bower_components)/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            presets: ['env']
-          }
-        }
-      },
-      {
-        test: /\.(css|scss)$/, //匹配css
-        use: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
-          use: 'css-loader!postcss-loader?id=css/[name].css'
-        })
-      },
-      {
-        test: /\.(png|jpg|gif)$/,
-        use: 'file-loader?name=static/images/[name].[ext]'
-      },
-      {
-        test: /\.ttf\??.*$/,
-        use: 'file-loader?name=static/fonts/[name].[ext]&minetype=application/octet-stream'
-      },
-      {
-        test: /\.eot\??.*$/,
-        use: 'file-loader?name=static/fonts/[name].[ext]'
-      },
-      {
-        test: /\.svg\??.*$/,
-        use: 'file-loader?name=static/fonts/[name].[ext]&minetype=image/svg+xml'
-      },
-      {
-        test: /\.(woff|woff2)\??.*$/,
-        use: 'file-loader?name=static/fonts/[name].[ext]&minetype=application/font-woff'
-      }
-    ]
-  },
-  plugins: [
-    new webpack.optimize.CommonsChunkPlugin({
-      name: 'commons',
-      filename: 'js/commons.js'
-    }),
-    // 全局 jquery
-    new webpack.ProvidePlugin({
-      $: 'jquery',
-      jQuery: 'jquery',
-      'window.jQuery': 'jquery',
-      'window.$': 'jquery'
-    }),
-    new HtmlWebpackPlugin({ //html注入文件插件
-      filename: 'index.html', //文件名
-      template: template, //渲染模板
-      // chunks: ['app']
-      // minify: { //压缩HTML
-      //   removeComments: true,
-      //   collapseWhitespace: true
-      // }
-    }),
-    new ExtractTextPlugin({
-      filename: 'css/[name].css'
-    }),
-    // new webpack.optimize.UglifyJsPlugin({
-    //   minimize: true
-    // })//混淆压缩
-  ]
-};
+    },
+    devServer: {
+        contentBase: path.join(__dirname, "docs"),
+        compress: true,
+        hot: true,
+        port: 9000
+    },
+    plugins: [
+        new htmlWebpackPlugin({
+            filename: "./index.html",
+            template: "./src/template.html",
+            inject: 'body' //将js文件插入body文件内
+        }),
 
-module.exports = config;
+        new webpack.optimize.CommonsChunkPlugin('commons'),
+        new ExtractTextPlugin('[name].css'),
+        new webpack.optimize.ModuleConcatenationPlugin(),
+        new CleanWebpackPlugin(
+            ['docs'], {
+                root: __dirname,
+                verbose: true,
+                dry: false,
+                watch: true
+            }
+        )
+    ]
+};

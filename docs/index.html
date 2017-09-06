@@ -1,1 +1,284 @@
-<!DOCTYPE html> <html lang=en> <head> <meta charset=UTF-8> <meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=0"/> <meta http-equiv=X-UA-Compatible content="ie=edge"> <title>摄影中心网络预约</title> <link rel=stylesheet href=//at.alicdn.com/t/font_393650_abvom6ml2qwa5rk9.css> <link href="css/main.css" rel="stylesheet"></head> <body> <div id=headerWrap class=header-wrap> <span id=backStep data-step=choseDate class="back-step iconfont icon-mjiantou-copy visibility-hidden">上一步</span> <img src=static/images/logo.jpg class=logo id=headerLogo> <span id=headerMenu class="header-menu iconfont icon-xuanxiang"></span> </div> <main id=dateChoseMain class=date-chose-main> <div id=choseDateWrap class=chose-date-wrap> <span class=chose-date-text><span class=serial-number>1</span>选择到访日期</span> <span class=time-status-wrap> <span class=time-status><i class="time-status-icon iconfont icon-dian-copy green-status"></i> 可预约</span> <span class=time-status><i class="time-status-icon iconfont icon-dian-copy"></i> 已约满</span> </span> </div> <ul id=choseDateUl class=chose-date-ul> </ul> <p class=notice-text>可预约10天内的档期，新一天的档期于每日10:00开放。</p> <div id=choseDateWrap class=chose-date-wrap> <span class=chose-date-text><span class=serial-number>2</span>选择到访时间段</span> <span class=time-status-wrap> <span class=time-status><i class="time-status-icon iconfont icon-dian-copy green-status"></i> 可预约</span> <span class=time-status><i class="time-status-icon iconfont icon-dian-copy"></i> 已约满</span> </span> </div> <ul id=choseTimeUl class=chose-time-ul> <li class="chose-time-li reservation-time-full" data-time=1 id=choseMorning> <div> <p class=this-halfday>上午</p> <p class=this-time>9:30 - 12:00</p> <i class="iconfont icon-xuanze chose-time-i-sign"></i> </div> <span class="iconfont icon-dian-copy"></span> </li> <li class="chose-time-li reservation-time-full" data-time=2 id=choseAfternon> <div> <p class=this-halfday>下午</p> <p class=this-time>14:30 - 17:30</p> <i class="iconfont icon-xuanze chose-time-i-sign"></i> </div> <span class="iconfont icon-dian-copy"></span> </li> </ul> <p class=notice-text>我们的工作时间是周一至周五 ( 9:00~17:30) </p> <p class=notice-text>为了更好的为您服务： </p> <p class=notice-text-b>建议您在工作日 <span>9:30~11:30</span> 或者 <span>13:00~16:30</span> 前来</p> <div class=next-step-wrap><button class=next-step id=nextStepDate>下一步</button></div> </main> <main id=fillInfo class="fill-info-main block-step-hide"> <header class="personal-info clearfix"> <span class=personal-info-title><i class="iconfont icon-gerenziliao"></i>个人资料</span> <span class=info-notice>我们保证，绝不会向第三方透露您的资料。为了更快更精准地为您服务请填写以下内容</span> </header> <div class=form-wrap> <div class=inputs-wrap> <div class="input-item input-name"> <p>你的姓名</p> <input type=text name=name id=inputName> </div> <div class="input-item id-prove"> <p>照片种类 ( 可多选 )</p> <span> <label><input type=checkbox name=filescata id=workProve value=1>婚纱照</label> <label><input type=checkbox name=filescata id=incomeProve value=2>证件照</label> <label><input type=checkbox name=filescata id=leaveProve value=3>个人写真</label> </span> </div> </div> <div class=inputs-wrap> <div class="input-item input-phone-number"> <p>你的手机号码</p> <input type=tel name=phonenumber id=inputPhoneNum> </div> <div class="input-item input-email"> <p>你的邮箱</p> <input type=text name=mail id=inputMail> </div> </div> <div class=inputs-wrap> <div class="input-item input-id-num"> <p>你的身份证号码</p> <input type=text name=iden id=inputId> </div> <div class="input-item input-use-for"> <p>对摄影师要求</p> <input type=text name=useto id=inputUseto> </div> </div> <div class=inputs-wrap> <div class="input-item input-entry-date"> <p>可取件时间</p> <input type=text readonly=readonly name=entryJobTime id=inputEntryJobTime> </div> <div class="input-item input-leave-date"> <p>最迟取件时间</p> <input type=text readonly=readonly name=leaveJobTime id=inputLeaveJobTime> </div> </div> <div class=inputs-wrap> <div class="input-item input-employer"> <p>备注</p> <input type=text name=employer id=inputEmployer> </div> </div> </div> <p class=notice-text>审核时间需要24小时以上，我们会以电话或者邮件形式通知您</p> <div class=next-step-wrap><button class="next-step next-step-confirm" id=nextStepConfirm>下一步</button></div> </main> <main class="confirm-info-main block-step-hide" id=confirmInfo> <div class=confirm-prove-wrap> <div class=confirm-prove-item id=workProveIcon> <img src=static/images/work.png alt=婚纱照> <p>婚纱照</p> </div> <div class=confirm-prove-item id=leaveProveIcon> <img src=static/images/Leave.png alt=证件照> <p>证件照</p> </div> <div class=confirm-prove-item id=incomeProveIcon> <img src=static/images/income.png alt=个人写真> <p>个人写真</p> </div> </div> <ul class=per-infos-ul> <li><span>日期：</span><span id=confirmDate>2017年8月29日 (周二) 17:20</span></li> <li><span>姓名：</span><span id=confirmName>王斩仙</span></li> <li><span>手机：</span><span id=confirmPhone>15051166222</span></li> <li><span>邮箱：</span><span id=confirmEmail>10177558548@qq.com</span></li> </ul> <div class=confirm-notice-wrap> <p class=confrim-notice-text>需带：本人、手机 </p> <ul class=info-table-ul> <li> <p>预计耗时</p> <p>约<span class=confirm-use-time>1</span>小时</p> </li> <li> <p>审核时间</p> <p><i class="iconfont icon-xuanze"></i><span>隔天</span></p> </li> <li> <p>取件方式</p> <p><i class="iconfont icon-xuanze"></i>当场可取、顺丰到付</p> </li> </ul> <p class=confrim-notice-text>备注</p> <p class="confrim-notice-text confrim-use-for">给我美白一下</p> </div> <div class=submit-step-wrap><button class="next-step submit-btn" id=submitData>确认提交</button></div> </main> <main class="con-cover block-step-hide" id=conCover> <i class="iconfont icon-jiazai rotations submit-icon" id=submitLoading></i> <div class="con-cover-success-block block-step-hide" id=congratBlock> <i class="con-icon iconfont icon-huodongcehua"></i> <p class=congrat-text>恭喜您</p> <p>预约<span class=congrat-do-for id=congratDoFor>拍摄婚纱</span>成功</p> <p>审核结果将会在隔日通知您</p> <button class="next-step back-home-btn" id=backHomeBtn>返回主页</button> <p>您还可以拨打我们的电话咨询具体事项</p> <p><a href=tel:021-1514458845 class=call-num>021-1514458845</a></p> </div> </main> <script src=//cdn.bootcss.com/zepto/1.0rc1/zepto.min.js></script> <script type="text/javascript" src="js/commons.js"></script><script type="text/javascript" src="./js/main.js"></script></body> </html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0"
+  />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>摄影中心网络预约</title>
+  <!-- <link rel="stylesheet" href="./style/normalize.css"> -->
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_393650_abvom6ml2qwa5rk9.css ">
+  <!-- <link rel="stylesheet" href="./style/style.css">
+  <link rel="stylesheet" href="./style/LCalendar.min.css"> -->
+<link href="entry.css" rel="stylesheet"></head>
+
+<body>
+  <!-- header -->
+  <div id="headerWrap" class="header-wrap">
+    <!-- data-step: choseDate  ;  infoFill ;  confirm -->
+    <span id="backStep" data-step="choseDate" class="back-step iconfont icon-mjiantou-copy visibility-hidden">上一步</span>
+    <img src="static/img/logo-0e36bee1.jpg" class="logo" id="headerLogo">
+    <span id="headerMenu" class="header-menu iconfont icon-xuanxiang"></span>
+  </div>
+  <!-- header end-->
+  <main id="dateChoseMain" class="date-chose-main">
+    <!-- title -->
+    <div id="choseDateWrap" class="chose-date-wrap">
+      <span class="chose-date-text"><span class="serial-number">1</span>选择到访日期</span>
+      <span class="time-status-wrap">
+        <span class="time-status"><i class="time-status-icon iconfont icon-dian-copy green-status"></i> 可预约</span>
+      <span class="time-status"><i class="time-status-icon iconfont icon-dian-copy"></i> 已约满</span>
+      </span>
+    </div>
+    <!-- title end-->
+    <!-- chose date -->
+    <ul id="choseDateUl" class="chose-date-ul">
+      <!-- <li class="chose-date-li">
+        <div>
+          <p class="this-month">8月</p>
+          <p class="this-date">23</p>
+          <p class="this-week">今天</p>
+          <i class="iconfont icon-xuanze chose-date-i-sign"></i>
+        </div>
+        <span class="iconfont icon-dian-copy"></span>
+      </li>
+     <li class="chose-date-li reservation-full" data-date="8月23今天">
+        <div>
+          <p class="this-month">8月</p>
+          <p class="this-date">24</p>
+          <p class="this-week">最近</p>
+          <i class="iconfont icon-xuanze chose-date-i-sign"></i>
+        </div>
+        <span class="iconfont icon-dian-copy"></span>
+      </li>
+      <li class="chose-date-li chose-this-date">
+        <div>
+          <p class="this-month">8月</p>
+          <p class="this-date">25</p>
+          <p class="this-week">周五</p>
+          <i class="iconfont icon-xuanze chose-date-i-sign"></i>
+        </div>
+        <span class="iconfont icon-dian-copy"></span>
+      </li>
+      <li class="chose-date-li reservation-full">
+        <div>
+          <p class="this-month">8月</p>
+          <p class="this-date">25</p>
+          <p class="this-week">周五</p>
+        </div> <span class="iconfont icon-dian-copy"></span>
+      </li>
+      <li class="chose-date-li">
+        <div>
+          <p class="this-month">8月</p>
+          <p class="this-date">25</p>
+          <p class="this-week">周五</p>
+        </div> <span class="iconfont icon-dian-copy"></span>
+      </li>
+      <li class="chose-date-li">
+        <div>
+          <p class="this-month">8月</p>
+          <p class="this-date">25</p>
+          <p class="this-week">周五</p>
+        </div> <span class="iconfont icon-dian-copy"></span>
+      </li>
+      <li class="chose-date-li">
+        <div>
+          <p class="this-month">8月</p>
+          <p class="this-date">25</p>
+          <p class="this-week">周五</p>
+        </div> <span class="iconfont icon-dian-copy"></span>
+      </li>
+      <li class="chose-date-li">
+        <div>
+          <p class="this-month">8月</p>
+          <p class="this-date">25</p>
+          <p class="this-week">周五</p>
+        </div> <span class="iconfont icon-dian-copy"></span>
+      </li>
+      <li class="chose-date-li">
+        <div>
+          <p class="this-month">8月</p>
+          <p class="this-date">25</p>
+          <p class="this-week">周五</p>
+        </div> <span class="iconfont icon-dian-copy"></span>
+      </li>
+      <li class="chose-date-li">
+        <div>
+          <p class="this-month">8月</p>
+          <p class="this-date">25</p>
+          <p class="this-week">周五</p>
+        </div> <span class="iconfont icon-dian-copy"></span>
+      </li> -->
+    </ul>
+    <!-- chose date end-->
+    <!-- notice -->
+    <p class="notice-text">可预约10天内的档期，新一天的档期于每日10:00开放。</p>
+    <!-- notice end-->
+    <!-- title -->
+    <div id="choseDateWrap" class="chose-date-wrap">
+      <span class="chose-date-text"><span class="serial-number">2</span>选择到访时间段</span>
+      <span class="time-status-wrap">
+        <span class="time-status"><i class="time-status-icon iconfont icon-dian-copy green-status"></i> 可预约</span>
+      <span class="time-status"><i class="time-status-icon iconfont icon-dian-copy"></i> 已约满</span>
+      </span>
+    </div>
+    <!-- title end-->
+    <!-- chose time -->
+    <ul id="choseTimeUl" class="chose-time-ul">
+      <!-- <i class='iconfont icon-jiazai rotationsbtn'></i> -->
+      <li class="chose-time-li reservation-time-full" data-time="1" id="choseMorning">
+        <div>
+          <p class="this-halfday">上午</p>
+          <p class="this-time">9:30 - 12:00</p>
+          <i class="iconfont icon-xuanze chose-time-i-sign"></i>
+        </div>
+        <span class="iconfont icon-dian-copy"></span>
+      </li>
+      <li class="chose-time-li reservation-time-full" data-time="2" id="choseAfternon">
+        <div>
+          <p class="this-halfday">下午</p>
+          <p class="this-time">14:30 - 17:30</p>
+          <i class="iconfont icon-xuanze chose-time-i-sign"></i>
+        </div>
+        <span class="iconfont icon-dian-copy"></span>
+      </li>
+    </ul>
+    <!-- chose time end -->
+    <!-- notice -->
+    <p class="notice-text">我们的工作时间是周一至周五 ( 9:00~17:30) </p>
+    <p class="notice-text">为了更好的为您服务： </p>
+    <p class="notice-text-b">建议您在工作日 <span>9:30~11:30</span> 或者 <span>13:00~16:30</span> 前来</p>
+    <!-- notice end-->
+    <!-- next step -->
+    <div class="next-step-wrap"><button class="next-step" id="nextStepDate">下一步</button></div>
+    <!-- next step end-->
+  </main>
+  <main id="fillInfo" class="fill-info-main block-step-hide">
+    <header class="personal-info clearfix">
+      <span class="personal-info-title"><i class="iconfont icon-gerenziliao"></i>个人资料</span>
+      <span class="info-notice">我们保证，绝不会向第三方透露您的资料。为了更快更精准地为您服务请填写以下内容</span>
+    </header>
+    <div class="form-wrap">
+      <div class="inputs-wrap">
+        <div class="input-item input-name">
+          <p>你的姓名</p>
+          <input type="text" name="name" id="inputName">
+        </div>
+        <div class="input-item id-prove">
+          <p>照片种类 ( 可多选 )</p>
+          <span>
+          <label><input type="checkbox" name="filescata" id="workProve" value="1" >婚纱照</label>
+          <label><input type="checkbox" name="filescata" id="incomeProve" value="2" >证件照</label>
+          <label><input type="checkbox" name="filescata" id="leaveProve" value="3">个人写真</label>
+        </span>
+        </div>
+      </div>
+      <div class="inputs-wrap">
+        <div class="input-item input-phone-number">
+          <p>你的手机号码</p>
+          <input type='tel' name="phonenumber" id="inputPhoneNum">
+        </div>
+        <div class="input-item input-email">
+          <p>你的邮箱</p>
+          <input type="text" name="mail" id="inputMail">
+        </div>
+      </div>
+      <div class="inputs-wrap">
+        <div class="input-item input-id-num">
+          <p>你的身份证号码</p>
+          <input type='text' name="iden" id="inputId">
+        </div>
+        <div class="input-item input-use-for">
+          <p>对摄影师要求</p>
+          <input type="text" name="useto" id="inputUseto">
+        </div>
+      </div>
+      <div class="inputs-wrap">
+        <div class="input-item input-entry-date">
+          <p>可取件时间</p>
+          <input type="text" readonly name="entryJobTime" id="inputEntryJobTime">
+        </div>
+        <div class="input-item input-leave-date">
+          <p>最迟取件时间</p>
+          <input type="text" readonly name="leaveJobTime" id="inputLeaveJobTime">
+        </div>
+      </div>
+      <div class="inputs-wrap">
+        <div class="input-item input-employer">
+          <p>备注</p>
+          <input type="text" name="employer" id="inputEmployer">
+        </div>
+      </div>
+    </div>
+    <!-- notice -->
+    <p class="notice-text">审核时间需要24小时以上，我们会以电话或者邮件形式通知您</p>
+    <!-- notice end-->
+    <!-- next step -->
+    <div class="next-step-wrap"><button class="next-step next-step-confirm" id="nextStepConfirm">下一步</button></div>
+    <!-- next step end-->
+  </main>
+  <main class="confirm-info-main block-step-hide" id="confirmInfo">
+    <div class="confirm-prove-wrap">
+      <div class="confirm-prove-item" id="workProveIcon">
+        <img src="static/img/work-2f80da85.png" alt="婚纱照">
+        <p>婚纱照</p>
+      </div>
+      <div class="confirm-prove-item" id="leaveProveIcon">
+        <img src="static/img/Leave-6bd42b7f.png" alt="证件照">
+        <p>证件照</p>
+      </div>
+      <div class="confirm-prove-item" id="incomeProveIcon">
+        <img src="static/img/income-c697ead3.png" alt="个人写真">
+        <p>个人写真</p>
+      </div>
+    </div>
+    <ul class="per-infos-ul">
+      <li><span>日期：</span><span id="confirmDate">2017年8月29日 (周二) 17:20</span></li>
+      <li><span>姓名：</span><span id="confirmName">王斩仙</span></li>
+      <li><span>手机：</span><span id="confirmPhone">15051166222</span></li>
+      <li><span>邮箱：</span><span id="confirmEmail">10177558548@qq.com</span></li>
+    </ul>
+
+    <!-- notice -->
+    <div class="confirm-notice-wrap">
+      <p class="confrim-notice-text">需带：本人、手机 </p>
+      <ul class="info-table-ul">
+        <li>
+          <p>预计耗时</p>
+          <p>约<span class="confirm-use-time">1</span>小时</p>
+        </li>
+        <li>
+          <p>审核时间</p>
+          <p><i class="iconfont icon-xuanze"></i><span>隔天</span></p>
+        </li>
+        <li>
+          <p>取件方式</p>
+          <p><i class="iconfont icon-xuanze"></i>当场可取、顺丰到付</p>
+        </li>
+      </ul>
+      <p class="confrim-notice-text">备注</p>
+      <p class="confrim-notice-text confrim-use-for">给我美白一下</p>
+    </div>
+    <!-- next step -->
+    <div class="submit-step-wrap"><button class="next-step submit-btn" id="submitData">确认提交</button></div>
+    <!-- next step end-->
+  </main>
+  <main class="con-cover block-step-hide" id="conCover">
+    <i class='iconfont icon-jiazai rotations submit-icon' id="submitLoading"></i>
+    <div class="con-cover-success-block block-step-hide" id="congratBlock">
+      <i class="con-icon iconfont icon-huodongcehua"></i>
+      <p class="congrat-text">恭喜您</p>
+      <p>预约<span class="congrat-do-for" id="congratDoFor">拍摄婚纱</span>成功</p>
+      <p>审核结果将会在隔日通知您</p>
+      <button class="next-step back-home-btn" id="backHomeBtn">返回主页</button>
+      <p>您还可以拨打我们的电话咨询具体事项</p>
+      <p><a href="tel:021-1514458845" class="call-num">021-1514458845</a></p>
+    </div>
+  </main>
+  <script src="//cdn.bootcss.com/zepto/1.0rc1/zepto.min.js"></script>
+  <!-- <script src="./script/LCalendar.min.js"></script>
+  <script src="./script/script.js"></script> -->
+<script type="text/javascript" src="commons.bundle.js"></script><script type="text/javascript" src="entry.bundle.js"></script></body>
+
+</html>
